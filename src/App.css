@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #059669;
+  --dark-gray: #9ca3af;
+  --off-white: #e5e7eb;
+}
+
+.App {
+  font-family: "Montserrat", "sans-serif";
+  text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input {
+  border: 1px solid var(--primary-color);
+  height: 25px;
+  width: 250px;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  padding: 0px 2rem;
+}
+
+.table-cell {
+  border: 1px solid var(--primary-color);
+  width: 40px;
+  font-size: small;
+}
+
+.link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.primary-link {
+  background-color: var(--primary-color);
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.btn {
+  margin: 25px auto;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .75rem 1.5rem;
+}
