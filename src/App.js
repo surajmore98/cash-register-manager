@@ -8,7 +8,8 @@ export default function App() {
 
   const [result, setResult] = useState([]);
 
-  const returnChange = () => {
+  const returnChange = (event) => {
+    event.preventDefault();
     if (amount > cash) {
       alert("please given cash is lesser than bill amount");
       return;
@@ -21,9 +22,7 @@ export default function App() {
       givenAmt = givenAmt - quantity * item;
       result.push(quantity);
     });
-    console.log(result);
     setResult(result);
-    console.log("result");
   };
 
   return (
@@ -33,25 +32,29 @@ export default function App() {
         Enter the bill amount and cash given by the customer and know minimum
         number of notes to return.
       </h3>
-      <div>
-        <h2>Bill Amount:</h2>
-        <input
-          type="number"
-          onChange={(event) => setAmount(parseInt(event.target.value))}
-        />
-      </div>
-      <div>
-        <h2>Cash Given:</h2>
-        <input
-          type="number"
-          onChange={(event) => setCash(parseInt(event.target.value))}
-        />
-      </div>
-      <div className="btn">
-        <button className="link primary-link" onClick={returnChange}>
-          Check
-        </button>
-      </div>
+      <form onSubmit={returnChange}>
+        <div>
+          <h2>Bill Amount:</h2>
+          <input
+            type="number"
+            min="0"
+            onChange={(event) => setAmount(parseInt(event.target.value))}
+          />
+        </div>
+        <div>
+          <h2>Cash Given:</h2>
+          <input
+            type="number"
+            min="0"
+            onChange={(event) => setCash(parseInt(event.target.value))}
+          />
+        </div>
+        <div className="btn">
+          <button className="link primary-link" type="submit">
+            Check
+          </button>
+        </div>
+      </form>
       <div>
         <div>
           <h2>Return Change</h2>
